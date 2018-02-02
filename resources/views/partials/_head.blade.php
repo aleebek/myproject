@@ -5,6 +5,8 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+	{{ Html::style('css/styles.css') }}
 	<title>Laravel blog @yield('title')</title>
+	
+	@yield('stylesheets')
 	<!-- Change this title for each page -->

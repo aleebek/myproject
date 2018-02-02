@@ -10,7 +10,7 @@
 	@include('partials._navs')
 
 	<div class="container">
-
+		@include('partials._messages')
 		@yield('content') 
 		
 		@include('partials._footer')
@@ -20,6 +20,8 @@
 
 
 	@include('partials._javascript')
+	
+	@yield('scripts')
 	
 </body>
 
