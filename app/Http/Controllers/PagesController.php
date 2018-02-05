@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class PagesController extends Controller {
     
     public function getIndex() {
-		return view('pages.welcome');
+		$posts = Post::latest()->take(4)->get(); //orderBy('created_at','desc')
+		return view('pages.welcome')->withPosts($posts);
 	}
     
     public function getAbout() {
@@ -22,6 +25,6 @@ class PagesController extends Controller {
     public function getContact() {
         return view('pages.contact');
     }
-    
+
 	
 }

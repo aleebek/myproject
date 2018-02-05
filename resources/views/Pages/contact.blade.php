@@ -1,6 +1,6 @@
 @extends('main') @section('title', '| Contact') @section('content')
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-8 offset-md-2">
 		<h1>Contact Me</h1>
 		<hr>
 		<form>

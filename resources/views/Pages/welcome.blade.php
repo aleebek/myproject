@@ -15,31 +15,14 @@
 <!-- End of .row -->
 <div class="row">
 	<div class="col-md-8">
-		<div class="post">
-			<h3>Post Title</h3>
-			<p class="lead">Nam malis elit se proident si sed esse iudicem despicationes. Fore mandaremus id arbitror ad cernantur nulla doctrina aliquip. Dolor pariatur ad arbitror. Te cupidatat a vidisse qui quo ...</p>
-			<a href="#" class="btn btn-primary">Read More</a>
-		</div>
-		<hr class="my-4">
-		<div class="post">
-			<h3>Post Title</h3>
-			<p class="lead">Nam malis elit se proident si sed esse iudicem despicationes. Fore mandaremus id arbitror ad cernantur nulla doctrina aliquip. Dolor pariatur ad arbitror. Te cupidatat a vidisse qui quo ...</p>
-			<a href="#" class="btn btn-primary">Read More</a>
-		</div>
-		<hr>
-		<div class="post">
-			<h3>Post Title</h3>
-			<p class="lead">Nam malis elit se proident si sed esse iudicem despicationes. Fore mandaremus id arbitror ad cernantur nulla doctrina aliquip. Dolor pariatur ad arbitror. Te cupidatat a vidisse qui quo ...</p>
-			<a href="#" class="btn btn-primary">Read More</a>
-		</div>
-		<hr>
-		<div class="post">
-			<h3>Post Title</h3>
-			<p class="lead">Nam malis elit se proident si sed esse iudicem despicationes. Fore mandaremus id arbitror ad cernantur nulla doctrina aliquip. Dolor pariatur ad arbitror. Te cupidatat a vidisse qui quo ...</p>
-			<a href="#" class="btn btn-primary">Read More</a>
-		</div>
-		<hr>
-
+		@foreach($posts as $post)
+			<div class="post">
+				<h3>{{ $post->title }}</h3>
+				<p class="lead">{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
+				<a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a>
+			</div>
+			<hr class="my-4">
+		@endforeach
 	</div>
 	<div class="col-md-3 col-md-offset-1">
 		<h2>Sidebar</h2>
